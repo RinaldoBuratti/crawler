@@ -2,9 +2,9 @@ package bing;
 
 import java.io.*;
 
-public class BingSearchApi {
+public class BufferReader {
 	
-	public BingSearchApi(){
+	public BufferReader(){
 		
 	}
 	

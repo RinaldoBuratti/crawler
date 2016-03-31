@@ -4,8 +4,8 @@ import java.io.*;
 public class TestFileReader {
 	
 	public static void main(String[] args) {
-		BingSearchApi o = new BingSearchApi();
-		File f = new File("/Users/rinaldoburatti/Desktop/provaFile.txt");
+		BufferReader o = new BufferReader();
+		File f = new File("/Users/rinaldoburatti/Desktop/provaFile.txt"); //change path for test file
 		o.FileReader(f);
 	}
 
