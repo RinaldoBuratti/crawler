@@ -41,12 +41,12 @@ public class PageDownloader {
 
 	/* prova */
 	public static void main(String[] args){
-		String s = "docs/google.txt";
+		String filename = "docs/google.txt";				// salva il contenuto http nel documento google.txt che si trova nella directory docs
 		String userAgent = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.249.0 Safari/532.5";
 		
 		try {
 		URL url = new URL("http://www.google.it");
-		downloadFromUrl(url, s, userAgent);
+		downloadFromUrl(url, filename, userAgent);
 		} catch (Exception e){
 			System.out.println("Errore");
 		}
