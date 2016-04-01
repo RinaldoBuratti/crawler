@@ -6,18 +6,22 @@ package bing;
 	import java.net.URLConnection;
 	import java.net.URLEncoder;
 	import java.nio.charset.Charset;
-	import java.util.Base64;
+import java.util.ArrayList;
+import java.util.Base64;
 
 	import org.json.JSONArray;
 	import org.json.JSONObject;
 
 	public class UrlRetriever {
-
-	    public static void main(final String[] args) throws Exception {
-	        final String accountKey = "<Your Bing API Key>";
+		
+		
+	    public static ArrayList<Object> getURLQuery(String search) throws Exception {
+	    	ArrayList<Object> urls = new ArrayList<Object>();
+	    	
+	        final String accountKey = "Zn04OWZG27TTXWls4ODt1s1vJAekzZvipBElISIl8R8";
 	        final String bingUrlPattern = "https://api.datamarket.azure.com/Bing/Search/Web?Query=%%27%s%%27&$format=JSON";
 
-	        final String query = URLEncoder.encode("'what      is omonoia'", Charset.defaultCharset().name());
+	        final String query = URLEncoder.encode(search, Charset.defaultCharset().name());
 	        final String bingUrl = String.format(bingUrlPattern, query);
 
 	        final String accountKeyEnc = Base64.getEncoder().encodeToString((accountKey + ":" + accountKey).getBytes());
@@ -38,9 +42,10 @@ package bing;
 	            final int resultsLength = results.length();
 	            for (int i = 0; i < resultsLength; i++) {
 	                final JSONObject aResult = results.getJSONObject(i);
-	                System.out.println(aResult.get("Url"));
+	                urls.add(aResult.get("Url"));
 	            }
 	        }
+			return urls;
 	    }
 
 	}
