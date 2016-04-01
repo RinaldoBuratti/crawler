@@ -23,12 +23,19 @@ public class Main {
 		//		for (String s: names) {
 		urls = UrlRetriever.getURLQuery("Mauro Barella");
 		userAgent = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.249.0 Safari/532.5";
-		int i = 0;													//per i nomi delle pagine
+		int i = 1;	
+		//per i nomi delle pagine
 		for (Object o: urls) {
 			URL url = new URL(o.toString());
-			filename = "docs/MauroBarella" + i +  ".html";
-			PageDownloader.downloadFromUrl(url, filename, userAgent);
-			i++;
+			filename = "docs/Mauro Barella" + i +  ".html";
+			try {
+				PageDownloader.downloadFromUrl(url, filename, userAgent);
+				i++;
+			} catch (Exception e) {
+				System.out.println("ERRORE per la pagina: " + url);
+				System.out.println("Tipo di errore: JSSE creates SSLProtocolException on (common) warning: unrecognized_name for SNI.");
+				System.out.println("Continuo il download delle restanti pagine");
+			};
 		}
 	
 	}

@@ -37,7 +37,8 @@ package bing;
 	                response.append(inputLine);
 	            }
 	            final JSONObject json = new JSONObject(response.toString());
-	            final JSONObject d = json.getJSONObject("d");
+	            final JSONObject d = json.getJSONObject("d");	
+	            System.out.println(d.toString());
 	            final JSONArray results = d.getJSONArray("results");
 	            final int resultsLength = results.length();
 	            for (int i = 0; i < resultsLength; i++) {
