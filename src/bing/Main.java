@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
+		System.setProperty("jsse.enableSNIExtension", "false");
 		BufferReader br = new BufferReader(); 					// per leggere da file di testo
 		ArrayList<String> names = new ArrayList<String>();		// nomi degli atleti recuperati dal br
 		ArrayList<Object> urls = new ArrayList<Object>();		// lista degli URL per nome
@@ -15,7 +16,7 @@ public class Main {
 
 		/* Recupera i nomi dal file di testo e li salva nella variabile names **
 		 * Guardare bene la directory dove viene salvato*/
-		File f = new File("C:/Users/lucav_000/git/Marilu1/Marilu/src/Nominativi/FileCompleto.txt");
+		File f = new File("/Users/rinaldoburatti/Desktop/Rinaldo.txt");
 		br.FileReader(f);
 		names = br.getNames();
 

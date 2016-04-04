@@ -17,6 +17,7 @@ public class PageDownloader {
 		    {
 		        URLConnection urlConn = url.openConnection ();
 		        urlConn.setRequestProperty ("User-Agent", userAgent);
+		        urlConn.setConnectTimeout(30000);
 
 		        is = urlConn.getInputStream ();
 		        fos = new FileOutputStream (localFilename);
