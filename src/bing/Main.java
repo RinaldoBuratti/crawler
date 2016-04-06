@@ -15,13 +15,14 @@ public class Main {
 		String userAgent;										// per effttuare il download della pagina html
 
 		/* Recupera i nomi dal file di testo e li salva nella variabile names **
-		 * Guardare bene la directory dove viene salvato*/
-		File f = new File("/Users/rinaldoburatti/Desktop/Rinaldo.txt");
+		 * Guardare bene la directory dove viene salvato*/	
+		File f = new File("C:/Users/lucav_000/git/Marilu1/Marilu/src/Nominativi/Luca.txt");
 		br.FileReader(f);
 		names = br.getNames();
 
 		/* Effettua due query su bing prendendo nome per nome e ne salva il contenuto delle pagine */
 		for (String s: names) {
+			System.out.println(s);
 			int i=0;								//variabile per contare i documenti
 			for (int n=0; n<6; n++){
 				urls = UrlRetriever.getURLQuery(s,n*50);

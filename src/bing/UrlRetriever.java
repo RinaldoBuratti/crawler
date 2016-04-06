@@ -18,7 +18,7 @@ package bing;
 	    public static ArrayList<Object> getURLQuery(String search, int skip) throws Exception {
 	    	ArrayList<Object> urls = new ArrayList<Object>();
 	    	
-	        final String accountKey = "r+xh8vO80uC/uHVxOB6da566NXSOsloMrD7y4vfuJQM";
+	        final String accountKey = "Zn04OWZG27TTXWls4ODt1s1vJAekzZvipBElISIl8R8";
 	        final String bingUrlPattern = "https://api.datamarket.azure.com/Bing/Search/Web?Query=%%27%s%%27&Market='it-IT'&$format=JSON&$skip=" + skip;
 
 	        final String query = URLEncoder.encode(search, Charset.defaultCharset().name());
