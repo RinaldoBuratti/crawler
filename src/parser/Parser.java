@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 public class Parser {
 
 	public static void main(String[] args) {
-		File dir = new File("C:/Users/lucav_000/git/Dataset/docs");
+		File dir = new File("/Volumes/PENDRIVE/docs");
 		String[] children = dir.list();
 		
 		FileOutputStream fos = null;
@@ -26,11 +26,11 @@ public class Parser {
 		File f;
 		
 		try {
-			for(int i=0; i< children.length; i++) {
+			for(int i=2; i< children.length; i++) {
 				String nomefile = children[i];
 			
 			filename = "json/"+ nomefile + ".json";
-			f = new File("C:/Users/lucav_000/git/Dataset/docs/" + nomefile); 
+			f = new File("/Volumes/PENDRIVE/docs/" + nomefile); 
 			Document fi = Jsoup.parse(f,null);
 			d.setText(fi.text());
 			d.setTitle(fi.title());
